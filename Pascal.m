@@ -63,7 +63,7 @@ subplot(1,2,1);
 stem(sx, px, 'b');
 title("Pascal PMF (p = 0.4; k = 3)");
 xlabel("Espaço amostral");
-ylabel("PX(x)");
+ylabel('P_X(x)');
 axis square
 
 % Plot da CDF
@@ -72,5 +72,5 @@ subplot(1,2,2);
 stem(sx, fx, 'r');
 title("Pascal CDF (p = 0.4; k = 3)");
 xlabel("Espaço amostral");
-ylabel("FX(x)");
+ylabel('F_X(x)');
 axis square

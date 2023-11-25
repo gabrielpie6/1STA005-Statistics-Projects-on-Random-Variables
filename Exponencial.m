@@ -29,16 +29,16 @@ E = expectedValue(sx, px)
 figure(1);
 subplot(1,2,1);
 stem(sx, px, 'b');
-title("Exponencial PMF (lambda = 1)");
+title('Exponencial PMF (\lambda = 1)');
 xlabel("Espaco amostral");
-ylabel("PX(x)");
+ylabel('P_X(x)');
 axis square
 
 % Plot da CDF
 figure(1);
 subplot(1,2,2);
 stem(sx, fx, 'r');
-title("Exponencial CDF (lambda = 1)");
+title('Exponencial CDF (\lambda = 1)');
 xlabel("Espaco amostral");
-ylabel("FX(x)");
+ylabel('F_X(x)');
 axis square

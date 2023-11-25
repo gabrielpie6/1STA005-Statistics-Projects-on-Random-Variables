@@ -51,16 +51,16 @@ E = expectedValue(sx, px)
 figure(1);
 subplot(1,2,1);
 stem(sx, px, 'b');
-title("Poisson PMF (alfa = 1)");
+title('Poisson PMF (\alpha = 1)');
 xlabel("Espaço amostral");
-ylabel("PX(x)");
+ylabel('P_X(x)');
 axis square
 
 % Plot da CDF
 figure(1);
 subplot(1,2,2);
 stem(sx, fx, 'r');
-title("Poisson CDF (alfa = 1)");
+title('Poisson CDF (\alpha = 1)');
 xlabel("Espaço amostral");
-ylabel("FX(x)");
+ylabel('F_X(x)');
 axis square
