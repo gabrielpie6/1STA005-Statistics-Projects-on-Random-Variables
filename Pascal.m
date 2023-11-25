@@ -1,53 +1,55 @@
 clear all clc clf
 
+% Função para calcular a função de massa de probabilidade (pmf) de uma variável aleatória de Pascal
 function pmf=pascalpmf(k,p,x)
-%For Pascal (k,p) rv X, and
-%input vector x, output is a
-%vector pmf: pmf(i)=Prob[X=x(i)]
-x=x(:);
-n=max(x);
-i=(k:n-1)';
-ip= [1 ;(1-p)*(i./(i+1-k))];
-%pb=all n-k+1 pascal probs
-pb=(p^k)*cumprod(ip);
-okx=(x==floor(x)).*(x>=k);
-%set bad x(i)=k to stop bad indexing
-x=(okx.*x) + k*(1-okx);
-% pmf(i)=0 unless x(i) >= k
-pmf=okx.*pb(x-k+1);
+  % Para a variável aleatória de Pascal (k,p) X, e
+  % vetor de entrada x, a saída é um
+  % vetor pmf: pmf(i)=Prob[X=x(i)]
+  x=x(:);
+  n=max(x);
+  i=(k:n-1)';
+  ip= [1 ;(1-p)*(i./(i+1-k))];
+  % pb=todas as probabilidades de pascal n-k+1
+  pb=(p^k)*cumprod(ip);
+  okx=(x==floor(x)).*(x>=k);
+  % define x(i) ruim=k para parar indexação ruim
+  x=(okx.*x) + k*(1-okx);
+  % pmf(i)=0 a menos que x(i) >= k
+  pmf=okx.*pb(x-k+1);
 endfunction
 
+% Função para calcular a função de distribuição cumulativa (cdf) de uma variável aleatória de Pascal
 function cdf=pascalcdf(k,p,x)
-%Usage: cdf=pascalcdf(k,p,x)
-%For a pascal (k,p) rv X
-%and input vector x, the output
-%is a vector cdf such that
-% cdf(i)=Prob[X<=x(i)]
-x=floor(x(:)); % for noninteger x(i)
-allx=k:max(x);
-%allcdf holds all needed cdf values
-allcdf=cumsum(pascalpmf(k,p,allx));
-%x_i < k have zero-prob,
-% other values are OK
-okx=(x>=k);
-%set zero-prob x(i)=k,
-%just so indexing is not fouled up
-x=(okx.*x) +((1-okx)*k);
-cdf= okx.*allcdf(x-k+1);
-cdf = cdf';
+  % Para uma variável aleatória de Pascal (k,p) X
+  % e vetor de entrada x, a saída
+  % é um vetor cdf tal que
+  % cdf(i)=Prob[X<=x(i)]
+  x=floor(x(:)); % para x(i) não inteiro
+  allx=k:max(x);
+  % allcdf contém todos os valores cdf necessários
+  allcdf=cumsum(pascalpmf(k,p,allx));
+  % x_i < k têm probabilidade zero,
+  % outros valores estão OK
+  okx=(x>=k);
+  % define x(i) de probabilidade zero=k,
+  % apenas para que a indexação não seja estragada
+  x=(okx.*x) +((1-okx)*k);
+  cdf= okx.*allcdf(x-k+1);
+  cdf = cdf';
 endfunction
 
+% Função para calcular o valor esperado de uma variável aleatória
 function E = expectedValue(sx, px)
   v = sx .* px;
   E = sum(v);
 endfunction
 
-% Espaço amostral e parametro
+% Espaço amostral e parâmetro
 sx = 0:1:9;
 p  = 0.4;
 k  = 3;
 
-% Calculo da PMF e CDF
+% Cálculo da PMF e CDF
 px = pascalpmf(k, p, sx);
 fx = pascalcdf(k, p, sx);
 px = px';
@@ -60,7 +62,7 @@ figure(1);
 subplot(1,2,1);
 stem(sx, px, 'b');
 title("Pascal PMF (p = 0.4; k = 3)");
-xlabel("Espaco amostral");
+xlabel("Espaço amostral");
 ylabel("PX(x)");
 axis square
 
@@ -69,6 +71,6 @@ figure(1);
 subplot(1,2,2);
 stem(sx, fx, 'r');
 title("Pascal CDF (p = 0.4; k = 3)");
-xlabel("Espaco amostral");
+xlabel("Espaço amostral");
 ylabel("FX(x)");
 axis square
