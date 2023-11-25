@@ -59,7 +59,7 @@ E = expectedValue(sx, px)
 figure(1);
 subplot(1,2,1);
 stem(sx, px, 'b');
-title("Poisson PMF (p = 0.4; k = 3)");
+title("Pascal PMF (p = 0.4; k = 3)");
 xlabel("Espaco amostral");
 ylabel("PX(x)");
 axis square
@@ -68,7 +68,7 @@ axis square
 figure(1);
 subplot(1,2,2);
 stem(sx, fx, 'r');
-title("Poisson CDF (p = 0.4; k = 3)");
+title("Pascal CDF (p = 0.4; k = 3)");
 xlabel("Espaco amostral");
 ylabel("FX(x)");
 axis square
