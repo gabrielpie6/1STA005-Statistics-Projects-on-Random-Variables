@@ -8,6 +8,6 @@ Poisson, Geométrica, Erlang, Pascal, Exponencial, Uniforme, Binomial e Bernoull
 |Pascal     |`✅`|Gabriel|
 |Exponencial|`✅`|Gabriel|
 |Erlang     |`✅`|Gabriel|
-|Uniforme   |`❌`|Gustavo|
-|Binomial   |`❌`|Gustavo|
-|Bernoulli  |`❌`|Gustavo|
+|Uniforme   |`✅`|Gustavo|
+|Binomial   |`✅`|Gustavo|
+|Bernoulli  |`✅`|Gustavo|
