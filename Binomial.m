@@ -100,8 +100,8 @@ figure(1);
 subplot(2,2,1);
 stem(0:(n - 1), px, 'b');
 title("Binomial PMF (n = 10, p = 0.33)");
-xlabel("Espaco amostral");
-ylabel("PX(x)");
+xlabel("Espaço amostral");
+ylabel('P_X(x)');
 axis square
 
 % Plot pmf usando bignomial
@@ -109,8 +109,8 @@ figure(1);
 subplot(2,2,2);
 stem(0:(n - 1), pgx, 'b');
 title("Bignomial PMF (n = 10, p = 0.33)");
-xlabel("Espaco amostral");
-ylabel("PX(x)");
+xlabel("Espaço amostral");
+ylabel('P_X(x)');
 axis square
 
 % Plot do cdf
@@ -119,5 +119,5 @@ subplot(2,2,3:4);
 stem(0:(n - 1), fx, 'r');
 title("Binomial CDF (n = 10, p = 0.33)");
 xlabel("Espaco amostral");
-ylabel("FX(x)");
+ylabel('F_X(x)');
 axis square
