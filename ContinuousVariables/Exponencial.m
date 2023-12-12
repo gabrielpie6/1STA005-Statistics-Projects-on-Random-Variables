@@ -17,7 +17,7 @@ function F=exponentialcdf(lambda,x)
   F=1.0-exp(-lambda*x);
 endfunction
 
-% Função para calcular o valor esperado de uma variável aleatória contínua
+% Função para calcular o valor esperado de uma variável aleatória contínua exponencial
 function E = expectedValue(a, b, lambda)
   f = @(x) lambda * exp(-lambda .* x);
   E = quadcc(@(x) x .* f(x), a, b);
@@ -32,7 +32,7 @@ px = exponentialpdf(lambda, sx);
 fx = exponentialcdf(lambda, sx);
 
 % Valor esperado
-E = expectedValue(0, 9, lambda)
+E = expectedValue(0, inf, lambda)
 
 % Plot da PDF
 figure(1);

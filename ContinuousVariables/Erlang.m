@@ -54,10 +54,10 @@ function F = erlangcdf(n, lambda, sx)
   endfor
 endfunction
 
-% Função para calcular o valor esperado de uma variável aleatória
-function E = expectedValue(sx, px)
-  v = sx .* px;
-  E = sum(v);
+% Função para calcular o valor esperado de uma variável aleatória contínua de Erlang
+function E = expectedValue(a, b, n, lambda)
+  f = @(x) ((lambda^n)/factorial(n-1))*(x.^(n-1)).*exp(-lambda .* x);
+  E = quadcc(@(x) x .* f(x), a, b);
 endfunction
 
 % Espaço amostral e parâmetros
@@ -70,7 +70,7 @@ px = erlangpdf(n, lambda, sx);
 fx = erlangcdf(n, lambda, sx);
 
 % Valor esperado
-E = expectedValue(sx, px)
+E = expectedValue(0, inf, n, lambda)
 
 % Plot da PMF
 figure(1);

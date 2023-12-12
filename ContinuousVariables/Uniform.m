@@ -17,7 +17,7 @@ function F=uniformcdf(a,b,x)
 endfunction
 
 
-% Função para calcular o valor esperado de uma variável aleatória
+% Função para calcular o valor esperado de uma variável aleatória uniforme
 function E = expectedValue(a, b)
   E = (b+a)/2;
 endfunction
