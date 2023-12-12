@@ -1,5 +1,8 @@
 clear all clc clf
 
+% Programa com funcionalidades implementadas para integração numérica de funções reais
+
+% Integração numérica pela regra dos trapézios
 function I = numericalIntegrationTrap(f, a, b, n)
   dx = (b - a)/n;
   I=0;
@@ -10,4 +13,6 @@ endfunction
 
 f  = @(x) x.^2;
 I  = numericalIntegrationTrap(f, 0, 1, 50)
+
+% Procedimento que realiza integração numérica utilizando método da quadratura de Gauss-Kronrod
 I2 = quadgk(f, 0, 1)

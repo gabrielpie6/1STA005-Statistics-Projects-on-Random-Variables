@@ -12,12 +12,11 @@ Poisson, Geométrica, Erlang, Pascal, Exponencial, Uniforme, Binomial e Bernoull
 |Binomial   |`✅`|Gustavo|
 |Bernoulli  |`✅`|Gustavo|
 
-# Variáveis analisada continuamente
+# Variáveis analisadas continuamente
 
 |Variável   |Status|Construção|
 |-----------|----|-------|
-|Gauss      |`❌`|Gabriel|
+|Gauss      |`✅`|Gabriel|
 |Exponencial|`✅`|Gabriel|
 |Erlang     |`✅`|Gabriel|
 |Uniforme   |`✅`|Gabriel|
-|Binomial   |`❌`|Gabriel|
