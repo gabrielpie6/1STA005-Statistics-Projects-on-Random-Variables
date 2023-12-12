@@ -17,7 +17,7 @@ Poisson, Geométrica, Erlang, Pascal, Exponencial, Uniforme, Binomial e Bernoull
 |Variável   |Status|Construção|
 |-----------|----|-------|
 |Gauss      |`❌`|Gabriel|
-|Exponencial|`❌`|Gabriel|
-|Erlang     |`❌`|Gabriel|
-|Uniforme   |`❌`|Gabriel|
+|Exponencial|`✅`|Gabriel|
+|Erlang     |`✅`|Gabriel|
+|Uniforme   |`✅`|Gabriel|
 |Binomial   |`❌`|Gabriel|
