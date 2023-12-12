@@ -6,11 +6,13 @@ function y=phi(x)
   y= 0.5 + 0.5*erf(x/sq2);
 endfunction
 
+% Função para calcular a função de densidade de probabilidade (pdf) de uma variável aleatória gaussiana
 function f=gausspdf(mu,sigma,x)
   f=exp(-(x-mu).^2/(2*sigma^2))/...
   sqrt(2*pi*sigma^2);
 endfunction
 
+% Função para calcular a função de distribuição cumulativa (cdf) de uma variável aleatória gaussiana
 function f=gausscdf(mu,sigma,x)
   f=phi((x-mu)/sigma);
 endfunction
